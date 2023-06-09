@@ -1,45 +1,27 @@
 #!/usr/bin/python3
-from sys import argv
-from calculator_1 import add, sub, mul, div
-if __name__ != "__main__":
-    exit()
 
-argc = len(argv) - 1
-if argc != 3:
-    print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
-    exit(1)
-elif argv[2] == '+':
-    answer = add(int(argv[1]), int(argv[3]))
-elif argv[2] == '-':
-    answer = sub(int(argv[1], int(argv[3]))
-elif argv[2] == '*':
-    answer = mul(int(argv[1], int(argv[3]))
-elif argv[2] == '/':
-    answer = div(int(argv[1], int(argv[3]))
-else:
-    print("Unknown operator. Available operators: +, -, * and /")
-    exit(1)
+if __name__ == "__main__":
+    import sys
 
-print("{:s} {:s} {:s} = {:d}".format(argv[1], argv[2], argv[3], answer))#!/usr/bin/python3
-from sys import argv
-from calculator_1 import add, sub, mul, div
-if __name__ != "__main__":
-    exit()
+    argc = len(sys.argv) - 1
+    if argc != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
 
-argc = len(argv) - 1
-if argc != 3:
-    print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
-    exit(1)
-elif argv[2] == '+':
-    answer = add(int(argv[1]), int(argv[3]))
-elif argv[2] == '-':
-    answer = sub(int(argv[1], int(argv[3]))
-elif argv[2] == '*':
-    answer = mul(int(argv[1], int(argv[3]))
-elif argv[2] == '/':
-    answer = div(int(argv[1], int(argv[3]))
-else:
-    print("Unknown operator. Available operators: +, -, * and /")
-    exit(1)
+    sym = sys.argv[2]
+    if sym != '+' and sym != '-' and sym != '*' and sym != '/':
+        print("Unknown operator. Available operators: +. -, * and /")
+        sys.exit(1)
 
-print("{:s} {:s} {:s} = {:d}".format(argv[1], argv[2], argv[3], answer))
+    from calculator_1 import add, sub, mul, div
+    a = int(sys.argv[1])
+    b = int9sys.argv[3])
+
+    if sym == '+':
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif sym == '-':
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif sym == '*':
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    else:
+        print("{} / {} = {}".format(a, b, div(a, b)))
