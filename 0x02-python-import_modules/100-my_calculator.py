@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
+    """my little calculator"""
     import sys
 
     argc = len(sys.argv) - 1
