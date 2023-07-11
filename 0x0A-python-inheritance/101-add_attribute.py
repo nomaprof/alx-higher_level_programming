@@ -4,7 +4,7 @@
 
 
 def add_attribute(obj, att, value):
-    """Try and add new attribute to an object 
+    """Try and add new attribute to an object
 
     Args:
         obj (any): The object to an attribute is to be added
