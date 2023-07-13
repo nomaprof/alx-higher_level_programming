@@ -1,16 +1,23 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thursday July 13 15:13:37 2023
 
-"""Add arguments to a python list and save the list in a file"""
-import sys
+@author: Etinosa Noma-Osaghae
+"""
+import json
 
-if __name__ == "__main__":
-    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-    load_from_json_file = \
-        __import__('6-load_from_json_file').load_from_json_file
 
-    try:
-        items = load_from_json_file("add_item.json")
-    except FileNotFoundError:
-        items = []
-    items.extend(sys.argv[1:])
-    save_to_json_file(items, "add_item.json")
+def save_to_json_file(my_obj, filename):
+    """
+    Savnge object to a file
+
+    Arguments:
+        my_obj (obj): The object to convert in json format
+        filename (str): Name of the output file
+
+    Return:
+        A file with a text in jason format
+    """
+    with open(filename, 'w', encoding='utf-8') as file:
+        return file.write(json.dumps(my_obj))
